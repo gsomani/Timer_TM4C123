@@ -21,7 +21,7 @@ CFLAGS = -g -mthumb -march=armv7e-m+fp -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat
 CFLAGS += -O0 -ffunction-sections -fdata-sections -MD -std=c99 -Wall
 CFLAGS += -pedantic -DPART_$(MCU) -c
 CFLAGS += -DTARGET_IS_TM4C123_RB1 -D DEBUG
-LIBS = -lc -ldriver
+LIBS = -lc
 LDFLAGS = -mthumb -march=armv7e-m+fp -mfloat-abi=hard -Wl,-Map=build/$(TARGET).map  -Wl,-T $(LD_SCRIPT) --entry ResetISR -Wl,--gc-sections -Wl,--start-group $(LIBS) -Wl,--end-group   
 
 #######################################
